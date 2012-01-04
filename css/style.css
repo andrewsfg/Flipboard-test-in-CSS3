@@ -361,18 +361,19 @@ body {
 }
 
 #main.effect {
-  -webkit-transform: scale(.99);
   opacity: .5;
+  -webkit-transform: scale(.95);
+  -webkit-transition: all .5s ease-in;
 }
 
 #main header h1 {
-  background: url(../img/logo.png) left top no-repeat;
+  background: url(../img/logo.png) 0 0 no-repeat;
   padding: 10em;
   opacity: .5;
   position: absolute;
   top: 20px;
   left: 20px;
-  z-index: 1;
+  z-index: 1000;
 }
 
 #main header h1 span {
@@ -390,7 +391,7 @@ body {
   height: 350px;
   position: relative;
   overflow: hidden;
-  -webkit-perspective: 900;
+  -webkit-perspective: 600;
 }
 
 #main ul li a {
@@ -450,22 +451,17 @@ body {
 
 .effect {
   -webkit-animation: get-in .5s ease-in 1 normal;
-  -webkit-transform: translateZ();
 }
 
-article:target {
+article:target, #panel:target {
   display: block;
-  visibility:visible;
-  -webkit-transition: left ease 1s;
-  -webkit-transform: translateZ();
   left: 0 !important;
+  visibility:visible;
+  -webkit-transition: visibility ease 1s;
+  -webkit-transition: left ease 1s;
 }
 
-article:target ~ #main {
-  border: 10px solid #000;
-}
-
-article {
+article, #panel {
   position: absolute;
   top: 0;
   left: 900px;
@@ -479,6 +475,15 @@ article h1 {
   font-size: 4em;
   line-height: 2.0;
   text-align: center;
+}
+
+article header nav a {
+  color: #000 !important;
+  display: block;
+  float: left;
+  font-size: 3em;
+  padding: 1.9% 0 0 2.8%;
+  text-decoration: none;
 }
 
 article figure {
@@ -510,6 +515,46 @@ article p small {
   color: #666;
 }
 
+#panel {
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+}
+
+#panel ul {
+  margin: 0;
+  overflow: hidden;
+}
+
+#panel ul li {
+  background-color: #000;
+  border: 2px solid #333;
+  float: left;
+  margin: 5% 15%;
+  overflow: hidden;
+  height: 200px;
+  position: relative;
+  width: 300px;
+}
+#panel ul li:nth-child(even) {
+  margin: 5% 0 5% 10%;
+}
+#panel ul li a {
+  text-decoration: none;
+}
+#panel ul li h3 {
+  color: #fff;
+  font-size: 2em;
+  padding: .75em;
+  text-shadow: rgba(0,0,0,0.5) 2px 1px;
+  z-index: 10;
+  position: relative;
+}
+#panel ul li img {
+  position: absolute;
+  top: 0;
+  z-index: 0;
+}
 
 /* animations */
 @-webkit-keyframes get-in {
