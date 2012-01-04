@@ -350,12 +350,19 @@ a:link {
 /* styles */
 
 body {
-  background: #444;
+  background: #000;
   font-family: Helvetica, Arial, sans-serif;
 }
 
 .container {
   min-width: 1280px;
+  position: relative;
+  overflow: hidden;
+}
+
+#main.effect {
+  -webkit-transform: scale(.99);
+  opacity: .5;
 }
 
 #main header h1 {
@@ -373,8 +380,6 @@ body {
   text-indent: -9999px;
 }
 
-
-
 #main ul {
   margin: 0;
 }
@@ -385,7 +390,7 @@ body {
   height: 350px;
   position: relative;
   overflow: hidden;
-  -webkit-perspective: 450;
+  -webkit-perspective: 900;
 }
 
 #main ul li a {
@@ -396,11 +401,6 @@ body {
   height: 100%;
   text-decoration: none;
   z-index: 100;
- 
-}
-
-#main ul li a:hover {
-  background-color: rgba(0,0,0,0.4);
 }
 
 #main ul li:first-child {
@@ -445,34 +445,33 @@ body {
 
 
 #main ul li a:hover {
-  -webkit-transform:skewY(0) translate(-30px, -30px);
-  -webkit-transition: all 1s;
+  -webkit-transition: all ease .4s;
+}
+
+.effect {
+  -webkit-animation: get-in .5s ease-in 1 normal;
+  -webkit-transform: translateZ();
 }
 
 article:target {
-  -webkit-transition: all ease .8s;
-  -moz-transition: all ease .8s;
-  -webkit-transform: translate(1px, 0);
-  -moz-transform: translate(1px, 0);
-  opacity: 1;
+  display: block;
+  visibility:visible;
+  -webkit-transition: left ease 1s;
+  -webkit-transform: translateZ();
+  left: 0 !important;
 }
 
 article:target ~ #main {
   border: 10px solid #000;
 }
 
-#main ul li a:hover  .container {
-   -webkit-transform: translate(1px, 1px);
-}
-
 article {
   position: absolute;
   top: 0;
+  left: 900px;
   background-color: #fff;
-  -webkit-transform: translate(900px, 0);
-  -moz-transform: translate(900px, 0);
-  opacity: 0;
   z-index: 1000;
+  visibility:hidden;
 }
 
 article h1 {
@@ -509,6 +508,15 @@ article p {
 
 article p small {
   color: #666;
+}
+
+
+/* animations */
+@-webkit-keyframes get-in {
+  from {
+      -webkit-transform: scale(1);
+      opacity: 1;
+  }
 }
 
 
