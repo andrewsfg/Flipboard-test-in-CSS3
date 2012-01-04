@@ -360,10 +360,14 @@ body {
   overflow: hidden;
 }
 
+#main:target {
+  -webkit-transition: all .5s ease-in;
+}
+
 #main.effect {
   opacity: .5;
   -webkit-transform: scale(.95);
-  -webkit-transition: all .5s ease-in;
+  -webkit-transition: all .5s ease;
 }
 
 #main header h1 {
@@ -468,6 +472,7 @@ article, #panel {
   background-color: #fff;
   z-index: 1000;
   visibility:hidden;
+  -webkit-transition: all 1s ease-in;
 }
 
 article h1 {
@@ -477,7 +482,8 @@ article h1 {
   text-align: center;
 }
 
-article header nav a {
+article header nav a,
+#panel header nav a {
   color: #000 !important;
   display: block;
   float: left;
