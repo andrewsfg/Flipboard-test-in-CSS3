@@ -352,6 +352,7 @@ a:link {
 body {
   background: #000;
   font-family: Helvetica, Arial, sans-serif;
+  overflow: hidden;
 }
 
 .container {
@@ -360,14 +361,9 @@ body {
   overflow: hidden;
 }
 
-#main:target {
-  -webkit-transition: all .5s ease-in;
-}
-
-#main.effect {
-  opacity: .5;
-  -webkit-transform: scale(.95);
-  -webkit-transition: all .5s ease;
+#main {
+  -webkit-transform: scale(1, 1) !important;
+  -webkit-transition: -webkit-transform .4s ease-in;
 }
 
 #main header h1 {
@@ -395,7 +391,6 @@ body {
   height: 350px;
   position: relative;
   overflow: hidden;
-  -webkit-perspective: 600;
 }
 
 #main ul li a {
@@ -406,6 +401,9 @@ body {
   height: 100%;
   text-decoration: none;
   z-index: 100;
+}
+#main ul li a:hover {
+  cursor: pointer;
 }
 
 #main ul li:first-child {
@@ -448,31 +446,30 @@ body {
   margin: 0 5% 0;
 }
 
-
-#main ul li a:hover {
-  -webkit-transition: all ease .4s;
-}
-
-.effect {
-  -webkit-animation: get-in .5s ease-in 1 normal;
+#main.effect {
+  opacity: .5;
+  -webkit-transform: scale(.98, .98) !important;
+  -webkit-transition: all .5s ease-in;
 }
 
 article:target, #panel:target {
-  display: block;
-  left: 0 !important;
-  visibility:visible;
-  -webkit-transition: visibility ease 1s;
-  -webkit-transition: left ease 1s;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+  -webkit-transform-origin: -100px 0;
 }
 
 article, #panel {
   position: absolute;
   top: 0;
-  left: 900px;
+  right: 0;
   background-color: #fff;
   z-index: 1000;
-  visibility:hidden;
-  -webkit-transition: all 1s ease-in;
+  visibility: hidden;
+  -webkit-transform: translateX(1240px);
+  -webkit-transition: all .8s ease;
+  -webkit-transform: translateZ();
+  opacity: .98;
 }
 
 article h1 {
@@ -534,7 +531,7 @@ article p small {
 
 #panel ul li {
   background-color: #000;
-  border: 2px solid #333;
+  border: 1px solid #333;
   float: left;
   margin: 5% 15%;
   overflow: hidden;
@@ -542,12 +539,15 @@ article p small {
   position: relative;
   width: 300px;
 }
+
 #panel ul li:nth-child(even) {
   margin: 5% 0 5% 10%;
 }
+
 #panel ul li a {
   text-decoration: none;
 }
+
 #panel ul li h3 {
   color: #fff;
   font-size: 2em;
@@ -556,19 +556,9 @@ article p small {
   z-index: 10;
   position: relative;
 }
+
 #panel ul li img {
   position: absolute;
   top: 0;
   z-index: 0;
 }
-
-/* animations */
-@-webkit-keyframes get-in {
-  from {
-      -webkit-transform: scale(1);
-      opacity: 1;
-  }
-}
-
-
-  
