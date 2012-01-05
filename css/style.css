@@ -356,12 +356,16 @@ body {
 }
 
 .container {
+  margin: 0 auto;
+  max-width: 1280px;
   min-width: 1280px;
-  position: relative;
   overflow: hidden;
+  position: relative;
 }
 
 #main {
+  position: relative;
+  z-index: 10;
   -webkit-transform: scale(1, 1) !important;
   -webkit-transition: -webkit-transform .4s ease-in;
 }
@@ -383,6 +387,7 @@ body {
 
 #main ul {
   margin: 0;
+  -webkit-transition: all 1s ease-in;
 }
 
 #main ul li {
@@ -391,6 +396,7 @@ body {
   height: 350px;
   position: relative;
   overflow: hidden;
+  -webkit-perspective: 500;
 }
 
 #main ul li a {
@@ -402,8 +408,11 @@ body {
   text-decoration: none;
   z-index: 100;
 }
-#main ul li a:hover {
+
+#main ul:active {
   cursor: pointer;
+   -webkit-transform: translate(0, -300px) rotateX(50deg) rotateZ(0) skew(0deg);
+   -webkit-transition: all .8s ease-in;
 }
 
 #main ul li:first-child {
@@ -419,8 +428,8 @@ body {
 }
 
 #main ul li:nth-child(2) {
-  float: left;
   border-right: 2px solid #fff;
+  float: left;
   width: 50%;
 }
 
@@ -434,7 +443,8 @@ body {
   margin: 5% 5%;
 }
 
-#main ul li h2, #main ul li p {
+#main ul li h2, 
+#main ul li p {
   text-shadow: rgba(0,0,0,0.8) 1px 1px 1px;
 }
 
@@ -447,29 +457,41 @@ body {
 }
 
 #main.effect {
+  background-color: #000;
   opacity: .5;
   -webkit-transform: scale(.98, .98) !important;
   -webkit-transition: all .5s ease-in;
 }
 
-article:target, #panel:target {
+article:target,
+#panel:target {
   visibility: visible;
   opacity: 1;
   -webkit-transform: translate(0, 0);
-  -webkit-transform-origin: -100px 0;
 }
 
-article, #panel {
+article {
   position: absolute;
   top: 0;
   right: 0;
   background-color: #fff;
   z-index: 1000;
   visibility: hidden;
-  -webkit-transform: translateX(1240px);
+  -webkit-transform: translateX(94%);
   -webkit-transition: all .8s ease;
   -webkit-transform: translateZ();
   opacity: .98;
+}
+
+#panel {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  -webkit-transform: translateX(0);
+}
+
+#panel:target {
+  z-index: 1000;
 }
 
 article h1 {
@@ -533,7 +555,7 @@ article p small {
   background-color: #000;
   border: 1px solid #333;
   float: left;
-  margin: 5% 15%;
+  margin: 5% 12%;
   overflow: hidden;
   height: 200px;
   position: relative;

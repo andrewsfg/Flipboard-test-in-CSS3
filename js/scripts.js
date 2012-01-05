@@ -2,6 +2,6 @@ $('#main ul li a').click(function(){
   $("#main").addClass("effect");
 });
 
-$('article header nav a').click(function(){
+$('.back').click(function(){
   $("#main").removeClass("effect").removeAttr("class");
 });
