@@ -364,6 +364,7 @@ body {
 }
 
 #main {
+  background-color: #000;
   position: relative;
   z-index: 10;
   -webkit-transform: scale(1, 1) !important;
