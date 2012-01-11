@@ -364,11 +364,11 @@ body {
 }
 
 #main {
-  background-color: #000;
   position: relative;
   z-index: 10;
   -webkit-transform: scale(1, 1) !important;
   -webkit-transition: -webkit-transform .4s ease-in;
+  -webkit-perspective: 500px;
 }
 
 #main header h1 {
@@ -397,7 +397,7 @@ body {
   height: 350px;
   position: relative;
   overflow: hidden;
-  -webkit-perspective: 500;
+  -webkit-perspective: 500px;
 }
 
 #main ul li a {
@@ -410,14 +410,18 @@ body {
   z-index: 100;
 }
 
-#main ul:active {
-  cursor: pointer;
-   -webkit-transform: translate(0, -300px) rotateX(50deg) rotateZ(0) skew(0deg);
-   -webkit-transition: all .8s ease-in;
+#main div {
+  background-color: #fff;
+  -webkit-transition: all ease .5s;
+  -webkit-backface-visibility:hidden;
 }
 
+#main div:active {
+  -webkit-transform: rotateY(50deg);
+  -webkit-transition: all ease .5s;
+
+}
 #main ul li:first-child {
-  border-bottom: 2px solid #fff;
   width: 100%;
 }
 
@@ -429,9 +433,14 @@ body {
 }
 
 #main ul li:nth-child(2) {
-  border-right: 2px solid #fff;
   float: left;
+  margin: 10px 10px 10px 0;
   width: 50%;
+  -webkit-transition: all .3s ease-in;
+}
+#main ul li:nth-child(3) {
+  margin: 10px 10px 10px 0;
+  -webkit-transition: all .3s ease-in;
 }
 
 #main ul li:first-child h2 {
@@ -442,6 +451,12 @@ body {
 #main ul li h2 {
   font-size: 2em;
   margin: 5% 5%;
+}
+
+#main ul li:nth-child(2):hover,
+#main ul li:nth-child(3):hover {
+  -webkit-transform: scale(1.05);
+  -webkit-transition: all .3s ease-in;
 }
 
 #main ul li h2, 
@@ -487,12 +502,15 @@ article {
 #panel {
   position: absolute;
   top: 0;
+  opacity: .8;
   z-index: 1;
   -webkit-transform: translateX(0);
 }
 
 #panel:target {
   z-index: 1000;
+  opacity: 1;
+  -webkit-transition: all .3s ease-in;
 }
 
 article h1 {
