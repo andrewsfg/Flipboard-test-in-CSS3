@@ -368,7 +368,7 @@ body {
   z-index: 10;
   -webkit-transform: scale(1, 1) !important;
   -webkit-transition: -webkit-transform .4s ease-in;
-  -webkit-perspective: 500px;
+  -webkit-transform: translateZ();
 }
 
 #main header h1 {
@@ -388,7 +388,6 @@ body {
 
 #main ul {
   margin: 0;
-  -webkit-transition: all 1s ease-in;
 }
 
 #main ul li {
@@ -398,6 +397,12 @@ body {
   position: relative;
   overflow: hidden;
   -webkit-perspective: 500px;
+  -webkit-transition: all .3s ease-in;
+}
+
+#main ul li a span {
+  display: block;
+  border-radius: 40em;
 }
 
 #main ul li a {
@@ -410,22 +415,31 @@ body {
   z-index: 100;
 }
 
-#main div {
+section, 
+article {
+    -webkit-perspective: 800px;
+}
+
+section > div,
+article > div {
   background-color: #fff;
-  -webkit-transition: all ease .5s;
-  -webkit-backface-visibility:hidden;
+  height: 100%;
+  position: relative;
+  -webkit-transition: all ease .3s;
+  -webkit-box-shadow: rgba(0,0,0,0.5) 4px 4px 5px 4px;
 }
 
-#main div:active {
-  -webkit-transform: rotateY(50deg);
+a.flip:hover + div {
   -webkit-transition: all ease .5s;
-
+  -webkit-transform: rotateY(4deg) rotateX(4deg);
 }
+
 #main ul li:first-child {
   width: 100%;
 }
 
 #main ul li img {
+  display: block;
   position: absolute;
   top: 0;
   width: 100%;
@@ -438,6 +452,7 @@ body {
   width: 50%;
   -webkit-transition: all .3s ease-in;
 }
+ 
 #main ul li:nth-child(3) {
   margin: 10px 10px 10px 0;
   -webkit-transition: all .3s ease-in;
@@ -456,7 +471,6 @@ body {
 #main ul li:nth-child(2):hover,
 #main ul li:nth-child(3):hover {
   -webkit-transform: scale(1.05);
-  -webkit-transition: all .3s ease-in;
 }
 
 #main ul li h2, 
@@ -474,29 +488,85 @@ body {
 
 #main.effect {
   background-color: #000;
-  opacity: .5;
+  opacity: .9;
   -webkit-transform: scale(.98, .98) !important;
   -webkit-transition: all .5s ease-in;
+  -webkit-transform: translateZ();
 }
 
 article:target,
-#panel:target {
-  visibility: visible;
+#panel:target,
+#main:target {
   opacity: 1;
-  -webkit-transform: translate(0, 0);
+  visibility: visible;
+  -webkit-transform: translate(0,0);
+  -webkit-transform: translateZ();
 }
 
+
 article {
+  height: 100%;
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #fff;
   z-index: 1000;
   visibility: hidden;
-  -webkit-transform: translateX(94%);
+  -webkit-transform: translateX(97.5%);
   -webkit-transition: all .8s ease;
   -webkit-transform: translateZ();
   opacity: .98;
+}
+
+article.news > div {
+  box-shadow: inset rgba(0,0,0,0.9) 0 -100px 150px 150px;
+}
+
+.news {
+  color: #fff;
+  text-shadow: rgba(0,0,0,0.5) 1px 1px 2px;
+}
+
+.news h2 {
+  font-size: 4em;
+}
+
+.news div > div {
+    margin: 22% 1% 0;
+}
+
+.news div > div {
+  padding: 0;
+}
+
+.news h1 {
+  color: #fff;
+}
+
+.news footer {
+  border-top: 1px solid rgba(255,255,255,0.2);
+  margin: 4% 1%;
+}
+
+.news footer p small {
+  color: #f5f5f5;
+  display: block;
+  margin: 1% 0;
+}
+
+.news footer figure {
+  float: left;
+  margin: 1% 1% 0 0;
+}
+
+.news footer figure img {
+  margin: 0.5% 0;
+  height: 40px;
+  width: 40px;
+}
+
+.news a.back {
+  color: #fff !important;
+  font-weight: bold;
 }
 
 #panel {
@@ -505,12 +575,12 @@ article {
   opacity: .8;
   z-index: 1;
   -webkit-transform: translateX(0);
+  -webkit-transition: all .3s ease-in;
 }
 
 #panel:target {
-  z-index: 1000;
   opacity: 1;
-  -webkit-transition: all .3s ease-in;
+  z-index: 100;
 }
 
 article h1 {
@@ -518,6 +588,11 @@ article h1 {
   font-size: 4em;
   line-height: 2.0;
   text-align: center;
+}
+
+article header {
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  margin: 0 1%;
 }
 
 article header nav a,
@@ -532,6 +607,7 @@ article header nav a,
 
 article figure {
   height: 400px;
+  max-width: 1280px;
   overflow: hidden;
 }
 
@@ -541,7 +617,7 @@ article figure img {
   margin: -300px auto;
 }
 
-article div {
+article div > div {
   margin: 0 1%;
   padding-bottom: 200px;
 }
@@ -560,7 +636,6 @@ article p small {
 }
 
 #panel {
-  background-color: #fff;
   height: 100%;
   width: 100%;
 }
@@ -579,6 +654,7 @@ article p small {
   height: 200px;
   position: relative;
   width: 300px;
+  -webkit-transition: all .3s ease;
 }
 
 #panel ul li:nth-child(even) {
@@ -587,6 +663,11 @@ article p small {
 
 #panel ul li a {
   text-decoration: none;
+}
+
+#panel ul li:hover {
+  -webkit-transform: scale(1.1);
+
 }
 
 #panel ul li h3 {
@@ -603,3 +684,28 @@ article p small {
   top: 0;
   z-index: 0;
 }
+
+.flip {
+  cursor: pointer;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70px;
+  z-index: 1000;
+  text-indent: -9999px;
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: portrait) { 
+    /* - */
+    .container {
+      max-width: 780px;
+    }
+}
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation: landscape) { 
+    /* - */
+    .container {
+      max-width: 1024px;
+    }
+}
+

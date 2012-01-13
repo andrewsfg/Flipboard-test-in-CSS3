@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width; initial-scale=1.0; ;" name="viewport">
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <title>Flipboard</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/libs/modernizr-2.0.6.js"></script>
@@ -13,79 +13,149 @@
 <body>
   <div class="container">
     <section id="main">
-    <div>
-      <header>
-        <h1><span>Flipboard</span></h1>
-      </header>
-      <ul>
-        <li>
-           <a href="#1">
-              <h2>Cover Stories</h2>
-              <p>Featuring CNN, Marie Claire, Bicycling Magazine, Wired, ReadWriteWeb and 5 others</p>
-              <img src="http://peterkubalak.com/wp-content/uploads/red-bull-air-svk-bratislava-20091.jpg" alt="">
-            </a>
-        </li>
-        <li>
-          <a href="#panel">
-            <h2>News</h2>
-            <img src="http://beforeitsnews.com/ckfinder/userfiles/0000000000041193/images/Libya.jpg" alt="News">
-          </a>
-        </li>
-        <li>
-          <a href="#1">
-            <h2>Technology</h2>
-            <img src="http://www.enciclopedia.com.pt/images/technology-astronaut-in-space.jpg" alt="Technology">
-          </a>
-        </li>
-      </ul>
-    </div>
-    </section>
-    <article id="1">
-      <header>
-        <nav>
-          <a href="#main" class="back">&larr;</a>
-        </nav>
-        <h1>Cover Stories</h1>
-      <figure>
-        <img src="http://peterkubalak.com/wp-content/uploads/red-bull-air-svk-bratislava-20091.jpg" alt="">
-      </figure>        
-      </header>
+    <a href="#panel" class="flip">&nbsp;</a>
       <div>
-        <h2>Murder most foul on Queen Elizabeth estate</h2>
-        <p>Thematic is a free, open-source, highly extensible, search-engine optimized WordPress Theme Framework featuring 13 widget-ready areas, grid-based layout samples, styling for popular plugins, and a whole community behind it. It’s perfect for beginner bloggers and WordPress development professionals.</p>
-        <p><small>by hosted.ap.org</small></p>
+        <header>
+          <h1><span>Flipboard</span></h1>
+        </header>
+        <ul>
+          <li>
+             <a href="#1">
+                <h2>Cover Stories</h2>
+                <p>Featuring CNN, Marie Claire, Bicycling Magazine, Wired, ReadWriteWeb and 5 others</p>
+                <span><img src="http://peterkubalak.com/wp-content/uploads/red-bull-air-svk-bratislava-20091.jpg" alt=""></span>
+              </a>
+          </li>
+          <li>
+            <a href="#news">
+              <h2>News</h2>
+              <img src="http://beforeitsnews.com/ckfinder/userfiles/0000000000041193/images/Libya.jpg" alt="News">
+            </a>
+          </li>
+          <li>
+            <a href="#panel">
+              <h2>More</h2>
+              <img src="http://www.enciclopedia.com.pt/images/technology-astronaut-in-space.jpg" alt="Technology">
+            </a>
+          </li>
+        </ul>
       </div>
+    </section>
+
+    <article id="1">
+      <a href="#main" class="flip">&nbsp;</a>
+        <div class="lala">
+          <header>
+            <nav>
+              <a href="javascript:void(0);" onClick="history.go(-1);" class="back">&larr;</a>
+            </nav>
+            <h1>Cover Stories</h1>
+          <figure>
+            <img src="http://peterkubalak.com/wp-content/uploads/red-bull-air-svk-bratislava-20091.jpg" alt="">
+          </figure>        
+          </header>
+          <div>
+            <h2>Murder most foul on Queen Elizabeth estate</h2>
+            <p>Thematic is a free, open-source, highly extensible, search-engine optimized WordPress Theme Framework featuring 13 widget-ready areas, grid-based layout samples, styling for popular plugins, and a whole community behind it. It’s perfect for beginner bloggers and WordPress development professionals.</p>
+            <p><small>by hosted.ap.org</small></p>
+          </div>
+        </div>
     </article>
+
+    <article id="news" class="news">
+      <a href="#panel" class="flip">&nbsp;</a>
+        <div style="background-image: url(http://2.bp.blogspot.com/-acijvOh9zCo/TX353i4EmlI/AAAAAAAAAMM/vQ3PNxFV6pc/s1600/Sziget-Muse.jpg);">
+          <header>
+            <nav>
+              <a href="javascript:void(0);" onClick="history.go(-1);" class="back">&larr;</a>
+            </nav>
+            <h1>News</h1>      
+          </header>
+          <div>
+            <h2>Christmas background competition winner is...</h2>
+            <p>Nyssa Ross for her festive interpretation of the Absolution artwork now showing on the Home page. The winner was chosen by Dom and she will receive a signed copy of The Resistance Tour Photography Book. The runners up can be seen on the other pages of the muse.mu and they are:</p>
+          </div>
+          <footer>
+            <figure>
+              <img src="http://1.bp.blogspot.com/_JFguNU5rKcQ/THcRPwiUt8I/AAAAAAAAACQ/Uic7LJ-RTjQ/s1600/LEGO_logo.png" alt="">
+            </figure>
+            <p><small>by <a href="http://muse.mu">muse.mu</a></small></p>
+          </footer>
+        </div>
+    </article>
+
+    <article id="design" class="news">
+      <a href="#main" class="flip">&nbsp;</a>
+        <div style="background-image: url(http://fc06.deviantart.com/fs37/f/2008/274/2/9/29798854d334928edaeaeff25ce28edf.jpg);">
+          <header>
+            <nav>
+              <a href="javascript:void(0);" onClick="history.go(-1);" class="back">&larr;</a>
+            </nav>
+            <h1>Design</h1>      
+          </header>
+          <div>
+            <h2>Worldwide Photography #53: Panama</h2>
+            <p>Worldwide Photography is a series of posts where every week we're going to show a city or location around the globe bringing the coolest photography samples of it. The photographs authors are all credited right above their pictures. Today feature: Panama, Panama. For the next week we're going to feature Belgrade, Serbia so if you want to send your submissions for the next Worldwide Photography,...</p>
+          </div>
+          <footer>
+            <p><small>by <a href="http://abduzeedo.com/">abduzeedo.com</a></small></p>
+          </footer>
+        </div>
+    </article>
+
+    <article id="photography">
+      <a href="#main" class="flip">&nbsp;</a>
+        <div>
+          <header>
+            <nav>
+              <a href="javascript:void(0);" onClick="history.go(-1);" class="back">&larr;</a>
+            </nav>
+            <h1>Photography</h1>
+          <figure>
+            <img src="http://foxhoundunit.files.wordpress.com/2011/03/reznorghost.jpg" alt="">
+          </figure>        
+          </header>
+          <div>
+            <h2>CES 2012: Our coverage continues; interviews rolling in</h2>
+            <p>Right before the show kicked off, we hosted exclusive Q&A sessions with both Canon and Nikon, to discuss two of the </p>
+            <p><small>by imaging-resource.co</small></p>
+          </div>
+        </div>
+    </article>
+
     <section id="panel">
-      <header>
-        <nav>
-        <a href="#main" class="back">&larr;</a>
-      </header>
-    <ul>
-      <li>
-        <a href="#">
-          <h3>Facebook</h3>
-          <img src="http://www.sempretops.com/wp-content/uploads/do-you-have-facebook.jpg" alt="Facebook">
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <h3>Twitter</h3>
-          <img src="http://www.mycool.com.br/ptg/wp-content/uploads/2009/10/Twitter-Bird.png" alt="Facebook">
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <h3>Design</h3>
-          <img src="http://newsimg.bbc.co.uk/media/images/42132000/jpg/_42132680_model_ap416b.jpg" alt="Design">
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <h3>Photography</h3>
-          <img src="http://oneslidephotography.com/wp-content/uploads/2011/07/Pre-wedding-Photography-Tips.jpg" alt="Photography">
-        </a>
-      </li> 
+      <a href="#main" class="flip">&nbsp;</a>
+        <div>
+          <header>
+            <nav>
+            <a href="#main" class="back">&larr;</a>
+          </header>
+        <ul>
+          <li>
+            <a href="#main">
+              <h3>Facebook</h3>
+              <img src="http://www.sempretops.com/wp-content/uploads/do-you-have-facebook.jpg" alt="Facebook">
+            </a>
+          </li>
+          <li>
+            <a href="#main">
+              <h3>Twitter</h3>
+              <img src="http://www.mycool.com.br/ptg/wp-content/uploads/2009/10/Twitter-Bird.png" alt="Facebook">
+            </a>
+          </li>
+          <li>
+            <a href="#design">
+              <h3>Design</h3>
+              <img src="http://newsimg.bbc.co.uk/media/images/42132000/jpg/_42132680_model_ap416b.jpg" alt="Design">
+            </a>
+          </li>
+          <li>
+            <a href="#photography">
+              <h3>Photography</h3>
+              <img src="http://oneslidephotography.com/wp-content/uploads/2011/07/Pre-wedding-Photography-Tips.jpg" alt="Photography">
+            </a>
+          </li>
+        </div>
     </section>
   </div>
 
